@@ -12,7 +12,7 @@ resource "google_container_cluster" "primary" {
   depends_on = [google_compute_subnetwork.subnet, local.api_dependency]
 
   private_cluster_config {
-    enable_private_endpoint = true
+    enable_private_endpoint = false
     enable_private_nodes    = true
     master_ipv4_cidr_block  = "10.13.0.0/28"
   }
@@ -22,8 +22,8 @@ resource "google_container_cluster" "primary" {
   }
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block   = "10.0.0.7/32"
-      display_name = "net1"
+      cidr_block   = "0.0.0.0/0"
+      display_name = "all-networks"
     }
   }
 }
