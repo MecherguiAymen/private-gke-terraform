@@ -7,6 +7,7 @@ resource "google_container_cluster" "primary" {
   subnetwork               = google_compute_subnetwork.subnet.name
   remove_default_node_pool = true ## create the smallest possible default node pool and immediately delete it.
   initial_node_count       = 1
+  deletion_protection      = false
   
   depends_on = [google_compute_subnetwork.subnet, local.api_dependency]
 
