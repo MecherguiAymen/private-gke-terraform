@@ -61,7 +61,7 @@ resource "google_sql_database_instance" "mydbinstance" {
 
 # Resource: Cloud SQL Database Schema
 resource "google_sql_database" "mydbschema" {
-  name     = "webappdb"
+  name     = "db-cafe-managment"
   instance = google_sql_database_instance.mydbinstance.name
 }
 
