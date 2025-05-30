@@ -6,14 +6,14 @@ variable "gcp_project" {
 }
 
 # GCP Region
-variable "gcp_region" {
+variable "gcp_zone" {
   description = "Region in which GCP Resources to be created"
   type        = string
   default     = "europe-central2-a"
 }
 
 # artifacr registry and cloud run region
-variable "gcp_region1" {
+variable "gcp_region" {
   description = "Region in which GCP resource will be created"
   type        = string
   default     = "europe-central2"

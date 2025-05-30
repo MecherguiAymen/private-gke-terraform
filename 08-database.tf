@@ -35,7 +35,7 @@ resource "google_sql_database_instance" "mydbinstance" {
   database_version = "MYSQL_8_0"
   project = var.gcp_project
   deletion_protection = false
-  region = var.gcp_region1
+  region = var.gcp_region
   
   settings {
     tier    = "db-f1-micro"

@@ -2,7 +2,7 @@
 resource "google_compute_address" "my_internal_ip_addr" {
   project      = var.gcp_project
   address_type = "INTERNAL"
-  region       = var.gcp_region1  # Région europe-central2 sans le suffixe -a
+  region       = var.gcp_region  # Région europe-central2 sans le suffixe -a
   subnetwork   = google_compute_subnetwork.subnet.name
   name         = "my-ip"
   address      = "10.0.0.7"
@@ -14,7 +14,7 @@ resource "google_compute_address" "my_internal_ip_addr" {
 ## Create jump host instance
 resource "google_compute_instance" "default" {
   project      = var.gcp_project
-  zone         = var.gcp_region  # var.gcp_region contient europe-central2-a, ce qui est correct pour une zone
+  zone         = var.gcp_zone  # var.gcp_region contient europe-central2-a, ce qui est correct pour une zone
   name         = "jump-host"
   machine_type = "e2-medium"
   
